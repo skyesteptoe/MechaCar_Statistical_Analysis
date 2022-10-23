@@ -19,8 +19,17 @@ This linear model effectively (but not completely) predicts mpg of MechaCar prot
 A manufacturing standard for MechaCars is that variance is minimized between vehicle suspension coils. Variance must not exceed 100 pounds per square inch. We decided to look at summary statistics data to look at variance in MechaCars.
 
 Overall, summary data shows that the mean and median for suspension coil PSI are nearly equivalent (1499 vs 1500, respectively). The variance is below the threshhold of 100 at 62 PSI and the standard deviation appears reasonable at 7.9 PSI. 
+
 ![image](total_sum.png)
 
 To confirm there is not variance between vehicle suspension coils at our manufacturing lots, we decide to look at summary statistics across our Manufacturing lots. Here, we see that while the mean and median are comparable across lots, the variance is much higher and above the 100 PSI threshold at Lot 3. 
 
 ![image](manulot.png)
+
+# Deliverable 3
+## T-Tests on Suspension Coils
+In the car manufacturing industry, the pounds per square inch (PSI) standard is 1,500 per square inch for suspension coils. This standard is also known as the population mean. We need to understand if MechaCars suspension coils vary from this population mean. To do this, we will perform a one-sample t-test to test whether MechaCars suspension coil mean is the same as the population mean (null hypothesis)
+
+Looking at suspension coils across all manufacturing lots, our t-test comparing our sample mean to the population mean results in no signficiant difference (p=0.06). What is notable here is that the p-value is approaching 0.05 and does make us wonder if something is awry in our manufacturing. We'd like to see something much further away from the p-value level. In this case, we do not want to reject the null hypothesis.
+
+We investigate further and look at suspension coil PSI across manufacturing lots. This requires subsetting our group data and running t-tests on each lot. It's worth the effort. Lot 1 (p=1) and Lot 2 (p=0.6) produce p-values that are not stastistically significant - we feel better about manufacturing of suspension coils at these lots. There isn't a signficant different in PSIs at these lots compared to the industry standard. Lot 3, on the otherhand, has a p-value=0.04. This is statistically signficant and we see that the PSI for suspension coils is significantly different at the 0.05 level at Lot 3 compared to the industry standard.
